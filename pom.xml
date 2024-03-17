@@ -73,7 +73,7 @@
                 <version>5.15.0</version>
                 <configuration>
                     <serverPort>1080</serverPort>
-                    <logLevel>DEBUG</logLevel>
+                    <logLevel>WARN</logLevel>
                     <initializationJson>mockserver.json</initializationJson>
                 </configuration>
             </plugin>

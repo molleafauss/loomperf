@@ -25,7 +25,7 @@ To run locally, you will need:
   * [MySQL](https://hub.docker.com/_/mysql)
   * [MariaDB](https://hub.docker.com/_/mariadb)
 * running the local mockserver - can be run via maven with the command
-  * `mvn org.mock-server:mockserver-maven-plugin:5.15.0:run`
+  * `mvn process-test-resources org.mock-server:mockserver-maven-plugin:5.15.0:run`
 * running locust - you will need a recent python (3.10+) and install locust as per its documentation
   * the locust script can be run via `locust -H http://localhost:8080`
 * The application can be run via the usual `mvn spring-boot:run`
