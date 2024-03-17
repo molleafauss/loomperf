@@ -17,7 +17,7 @@ where your service has a dependency which has (long)er response times.
 A [locust](https://locust.io/) script is included to cause load on the system.
 
 ### Results
-Results with images are in the [results/results.md] file.
+[The result directory](results/results.md) contains, commented, the results of the tests run.
 
 ### Running
 To run locally, you will need:

@@ -3,7 +3,6 @@ package net.molleafauss.loomtest.service;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import net.molleafauss.loomtest.controllers.models.SampleData;
