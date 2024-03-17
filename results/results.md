@@ -58,3 +58,17 @@ requests recorded.
 **MockServer status from VisualVM**
 ![MockServer status from VisualVM](virtual_threads_mockserver_50-500-2500.png)
 
+
+A second run using multiple locust workers (3) and 2000 concurrent users gave better results - although there was still
+CPU saturation in locust. It peaked ~2700rps (double than previous) and the average response was still 500ms with 95%
+that was occasionally moving up towards 1000ms.
+
+Application CPU in this case was over 40% and also native threads peaked to a maximum. 
+
+**RPS and response times from locust**
+![RPS and response times from locust](virtual_threads_locust_2000.png)
+
+**Application status from VisualVM**
+![Application status from VisualVM](virtual_threads_application_2000.png)
+
+
