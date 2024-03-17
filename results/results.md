@@ -12,6 +12,21 @@ Database: MariaDB 10.6.4 running locally (not dockerized)
 
 Graphs of the application(s) performance was captured using [VisualVM](https://visualvm.github.io/)
 
+The TL:DR
+```
+* As promised, the use of virtual threads didn't require any code change in the application code
+* Spring 3.2 makes it incredibly easy to switching native to virtual threads with a simple config change
+* An application like the one showcased, would generally be able to process more requests (~5x) with the same code
+* There is a significant increase in baseline CPU usage, which would need to be analysed based on the profile of your 
+  application -  run extensive load tests before switching the flag 
+* There is still a good usage of native threads (not sure if this is Tomcat or Spring) in heavy throughput scenarios,
+  this may cause "duplicate tuning" headaches.
+  
+The bottom line: for low-to-medium traffic application Spring 3.2 and virtual threads should be the default config; for
+applications that are already tuned for high traffic (as long they are not using reactive programming), some further 
+test and optimization will be needed. 
+```
+
 ### USING NATIVE THREADS
 The following images shows how the system performs using native threads. Load started with 50 concurrent users
 and then increased to 500 concurrent users.
@@ -70,5 +85,7 @@ Application CPU in this case was over 40% and also native threads peaked to a ma
 
 **Application status from VisualVM**
 ![Application status from VisualVM](virtual_threads_application_2000.png)
+
+
 
 
