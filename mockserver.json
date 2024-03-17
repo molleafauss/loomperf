@@ -1,0 +1,19 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/user/score"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "delay": {
+        "timeUnit": "MILLISECONDS",
+        "value": 500
+      },
+      "body": "{ \"name\": \"score_test\", \"value\": \"score_value\" }"
+    }
+  }
+]
