@@ -1,6 +1,15 @@
-## Spring+Project Loom sample
+# Spring+Project Loom sample
 This project is a quick app to show how much more "scalability" [project loom](https://openjdk.org/projects/loom/) can provide to a vanilla spring app.
 
+## Quick start
+
+```bash
+docker run --name mariadb-loom -e MYSQL_ROOT_PASSWORD=admin -e MARIADB_DATABASE=loom -p 3306:3306 -d mariadb:latest
+docker run --name mockserver-loom -d --rm -p 1080:1080 -v $PWD/src/test/resources:/init --env MOCKSERVER_LOG_LEVEL=INFO --env MOCKSERVER_SERVER_PORT=1080 --env MOCKSERVER_INITIALIZATION_JSON_PATH=/init/mockserver.json mockserver/mockserver:5.15.0
+docker run --name locust-loom -d --network="host" -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/locustfile.py -H http://127.0.0.1:8080
+mvn spring-boot:run -Dspring.threads.virtual.enabled=true
+```
+ 
 The application is purposefully very simple, but it tries to replicate a common scenario in (micro)services:
 
 > an HTTP request comes in, an external service is called and a row is added to a database
