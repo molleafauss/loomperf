@@ -25,10 +25,10 @@ where your service has a dependency which has (long)er response times.
 
 A [locust](https://locust.io/) script is included to cause load on the system.
 
-### Results
+## Results
 [The result directory](results/results.md) contains, commented, the results of the tests run.
 
-### Running
+## Running
 To run locally, you will need:
 * a running MySQL or MariaDB - can be installed locally, or run via docker 
   * [MySQL](https://hub.docker.com/_/mysql)
